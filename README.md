@@ -1,4 +1,4 @@
-📹 Sistema de Alarma Inteligente con Detección de Movimiento
+# 📹 Sistema de Alarma Inteligente con Detección de Movimiento
 
 Este proyecto es un sistema de seguridad integral desarrollado en Android con Kotlin y Jetpack Compose. La aplicación está diseñada para recibir alertas de anomalías en tiempo real a través de Firebase Realtime Database y mostrar un historial completo de eventos detectados.
 
