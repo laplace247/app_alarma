@@ -1,0 +1,47 @@
+app/
+├─ manifests/
+│  └─ AndroidManifest.xml (Configuración central, muy similar a la anterior)
+│
+├─ java/ (o kotlin/)
+│  └─ com/
+│     └─ empresa/
+│        └─ appalarma/  (Tu paquete principal)
+│           │
+│           ├─ 📄 MainActivity.kt (¡Ahora es el centro de tu UI con @Composable!)
+│           │
+│           ├─ data/  (Capa de datos - SIN CAMBIOS)
+│           │  ├─ model/
+│           │  │  └─ 📄 Anomaly.kt (Sigue siendo la misma data class)
+│           │  └─ repository/
+│           │     └─ 📄 AnomalyRepository.kt (Sigue siendo la misma clase con LiveData)
+│           │
+│           ├─ services/ (Capa de servicios - SIN CAMBIOS)
+│           │  └─ 📄 FirebaseAlarmService.kt (Misma lógica para recibir notificaciones)
+│           │
+│           ├─ ui/  (Capa de UI - ¡AQUÍ ESTÁ EL GRAN CAMBIO!)
+│           │  ├─ main/
+│           │  │  ├─ 📄 MainViewModel.kt (Misma lógica, expone el LiveData)
+│           │  │  └─ 📄 AlarmAppScreen.kt (Opcional, para organizar la UI principal)
+│           │  │
+│           │  └─ theme/ (Archivos de tema generados por Compose)
+│           │     ├─ 📄 Color.kt
+│           │     ├─ 📄 Theme.kt
+│           │     └─ 📄 Type.kt
+│           │
+│           └─ utils/ (Clases de ayuda - SIN CAMBIOS)
+│              └─ 📄 NotificationHelper.kt (Misma lógica para construir notificaciones)
+│
+├─ res/ (Recursos de la aplicación)
+│  ├─ drawable/
+│  │  └─ 🖼️ ic_notification_warning.xml (Icono para la notificación, sigue siendo necesario)
+│  │
+│  ├─ raw/
+│  │  └─ 🎵 custom_alarm_sound.mp3 (Sonido de alarma, sigue siendo necesario)
+│  │
+│  └─ values/
+│     ├─ 📄 colors.xml  (Menos importante, Compose usa Color.kt)
+│     ├─ 📄 strings.xml (Sigue siendo muy útil para los textos de la app)
+│     └─ 📄 themes.xml  (Menos importante, Compose usa Theme.kt)
+│
+├─ 📄 build.gradle.kts (Module :app) (Configurado con las dependencias de Compose)
+└─ 📄 google-services.json (Archivo de configuración de Firebase, sin cambios)

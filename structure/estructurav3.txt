@@ -1,0 +1,55 @@
+AppAlarma/  (Directorio raíz de tu proyecto de Android Studio)
+│
+├── 📁 app/ (El módulo principal de tu aplicación)
+│   │
+│   ├── 📄 build.gradle.kts (MODIFICADO para incluir Retrofit, Gson y Compose)
+│   ├── 📄 google-services.json (AÚN NECESARIO para Firebase Cloud Messaging)
+│   │
+│   ├── src/
+│   │   ├── main/
+│   │   │   │
+│   │   │   ├── 📁 java/com/empresa/appalarma/ (Paquete principal del código)
+│   │   │   │   │
+│   │   │   │   ├── 📄 MainActivity.kt (La Activity principal que aloja la UI de Compose)
+│   │   │   │   │
+│   │   │   │   ├── 📁 data/
+│   │   │   │   │   ├── 📁 model/
+│   │   │   │   │   │   └── 📄 Anomaly.kt (Define la estructura de una anomalía)
+│   │   │   │   │   │
+│   │   │   │   │   ├── 📁 network/ (¡NUEVO! Para la comunicación con tu API)
+│   │   │   │   │   │   └── 📄 ApiService.kt (Define los endpoints con Retrofit)
+│   │   │   │   │   │
+│   │   │   │   │   ├── 📁 repository/
+│   │   │   │   │   │   └── 📄 AnomalyRepository.kt (MODIFICADO, ahora llama a tu API)
+│   │   │   │   │   │
+│   │   │   │   │   └── 📁 settings/ (¡NUEVO! Para guardar las preferencias del usuario)
+│   │   │   │   │       └── 📄 SettingsRepository.kt (Gestiona el tono guardado)
+│   │   │   │   │
+│   │   │   │   ├── 📁 services/ (Servicios que corren en segundo plano)
+│   │   │   │   │   └── 📄 FirebaseAlarmService.kt (Aún recibe notificaciones de FCM)
+│   │   │   │   │
+│   │   │   │   ├── 📁 ui/
+│   │   │   │   │   ├── 📁 main/
+│   │   │   │   │   │   └── 📄 MainViewModel.kt (MODIFICADO, gestiona la API y los tonos)
+│   │   │   │   │   └── 📁 theme/
+│   │   │   │   │       ├── 📄 Color.kt
+│   │   │   │   │       ├── 📄 Theme.kt
+│   │   │   │   │       └── 📄 Type.kt
+│   │   │   │   │
+│   │   │   │   └── 📁 utils/
+│   │   │   │       └── 📄 NotificationHelper.kt (MODIFICADO, acepta un tono dinámico)
+│   │   │   │
+│   │   │   ├── 📁 res/
+│   │   │   │   ├── 📁 drawable/ (Iconos para la app y notificaciones)
+│   │   │   │   ├── 📁 mipmap-*/ (Iconos de lanzamiento de la app)
+│   │   │   │   ├── 📁 raw/ (Tus archivos de sonido de alarma: .mp3)
+│   │   │   │   ├── 📁 values/ (strings.xml, colors.xml, themes.xml)
+│   │   │   │   └── 📁 xml/ (¡NUEVO ARCHIVO IMPORTANTE AQUÍ!)
+│   │   │   │       └── 📄 network_security_config.xml (Permite la conexión a tu PC)
+│   │   │   │
+│   │   │   └── 📄 AndroidManifest.xml (MODIFICADO para permisos y la config. de red)
+│
+├── 📁 gradle/
+│   └── 📄 libs.versions.toml (Catálogo de versiones de todas las dependencias)
+│
+└── 📄 build.gradle.kts (Nivel de proyecto)
